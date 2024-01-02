@@ -99,7 +99,7 @@ export default function Navbar() {
                     >
                       <img
                         className="inline-block w-10 h-10 rounded-full"
-                        src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
+                        src="https://media.licdn.com/dms/image/D5603AQFexkkNzdv1sw/profile-displayphoto-shrink_100_100/0/1702736983139?e=1709769600&v=beta&t=ZrumUrIZJlEWb1EPXo5FbTXPpUNJoNMpQ8t2lRPbwsM"
                         alt="Dan_Abromov"
                       />{" "}
                     </Link>
@@ -241,7 +241,7 @@ export default function Navbar() {
                   <a href="#" className="flex items-center text-gray-700 ">
                     <img
                       className="inline-block w-10 h-10 rounded-full"
-                      src="https://overreacted.io/static/profile-pic-c715447ce38098828758e525a1128b87.jpg"
+                      src="https://media.licdn.com/dms/image/D5603AQFexkkNzdv1sw/profile-displayphoto-shrink_100_100/0/1702736983139?e=1709769600&v=beta&t=ZrumUrIZJlEWb1EPXo5FbTXPpUNJoNMpQ8t2lRPbwsM"
                       alt="Dan_Abromov"
                     />
                   </a>
