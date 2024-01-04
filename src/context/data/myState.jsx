@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MyContext from "./myContext";
-import { fireDb } from "../../firebase/firebaseConfig";
+import { fireDB } from "../../firebase/firebaseConfig";
 import {
   Timestamp,
   addDoc,
@@ -50,11 +50,14 @@ function MyState(props) {
     ) {
       return toast.error("Please fill all fields");
     }
-    const productRef = collection(fireDb, "products");
+    const productRef = collection(fireDB, "products");
     setLoading(true);
     try {
       await addDoc(productRef, products);
       toast.success("Product Add successfully");
+      setTimeout(() => {
+        window.location.href = "/dashboard ";
+      }, 800);
       getProductData();
       closeModal();
       setLoading(false);
@@ -72,7 +75,7 @@ function MyState(props) {
     setLoading(true);
     try {
       const q = query(
-        collection(fireDb, "products"),
+        collection(fireDB, "products"),
         orderBy("time")
         // limit(5)
       );
