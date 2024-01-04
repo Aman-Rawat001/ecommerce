@@ -8,6 +8,9 @@ import {
   onSnapshot,
   orderBy,
   query,
+  setDoc,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
@@ -70,7 +73,7 @@ function MyState(props) {
 
   const [product, setProduct] = useState([]);
 
-  // ****** get product
+  // ****** get product *********************
   const getProductData = async () => {
     setLoading(true);
     try {
@@ -94,6 +97,43 @@ function MyState(props) {
     }
   };
 
+  // *********update products*****************
+  const edithandle = (item) => {
+    setProducts(item);
+  };
+  const updateProduct = async (item) => {
+    setLoading(true);
+    try {
+      // setdocs used to update data in firebase
+      await setDoc(doc(fireDB, "products", products.id), products);
+      toast.success("Product Updated successfully");
+      setTimeout(() => {
+        window.location.href = "/dashboard";
+      }, 800);
+      getProductData();
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+    }
+    setProducts("");
+  };
+
+  // *************delete products***********************
+  const deleteProduct = async (item) => {
+    try {
+      setLoading(true);
+      await deleteDoc(doc(fireDB, "products", item.id));
+      toast.success("Product Deleted successfully");
+      setLoading(false);
+      getProductData();
+    } catch (error) {
+      console.log(error);
+      // toast.success("Product Deleted Falied");
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     getProductData();
   }, []);
@@ -109,6 +149,9 @@ function MyState(props) {
         product,
         setProducts,
         addProduct,
+        edithandle,
+        updateProduct,
+        deleteProduct,
       }}
     >
       {props.children}
