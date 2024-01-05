@@ -101,7 +101,8 @@ function MyState(props) {
   const edithandle = (item) => {
     setProducts(item);
   };
-  const updateProduct = async (item) => {
+  const updateProduct = async () => {
+    console.log(products);
     setLoading(true);
     try {
       // setdocs used to update data in firebase
