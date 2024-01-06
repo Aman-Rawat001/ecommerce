@@ -11,6 +11,7 @@ import {
   setDoc,
   deleteDoc,
   doc,
+  getDocs,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
@@ -135,8 +136,30 @@ function MyState(props) {
     }
   };
 
+  // ******************fetch orders*********************
+  const [order, setOrder] = useState([]);
+
+  const getOrderData = async () => {
+    setLoading(true);
+    try {
+      const result = await getDocs(collection(fireDB, "orders"));
+      const ordersArray = [];
+      result.forEach((doc) => {
+        ordersArray.push(doc.data());
+        setLoading(false);
+      });
+      setOrder(ordersArray);
+      console.log(ordersArray);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     getProductData();
+    getOrderData();
   }, []);
 
   return (
@@ -152,6 +175,7 @@ function MyState(props) {
         addProduct,
         edithandle,
         updateProduct,
+        order,
         deleteProduct,
       }}
     >
