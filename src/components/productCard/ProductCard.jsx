@@ -50,6 +50,7 @@ function ProductCard() {
             .filter((obj) => obj.title.toLowerCase().includes(searchkey))
             .filter((obj) => obj.category.toLowerCase().includes(filterType))
             .filter((obj) => obj.price.toLowerCase().includes(filterPrice))
+            .slice(0, 8) // show only 8 products in homapge
             .map((item, index) => {
               const { title, price, description, imageUrl } = item;
               return (

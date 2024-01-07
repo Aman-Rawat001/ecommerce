@@ -15,6 +15,7 @@ import MyState from "./context/data/myState";
 import Login from "./pages/registration/Login";
 import Signup from "./pages/registration/Signup";
 import ProductInfo from "./pages/productInfo/ProductInfo";
+import AllProducts from "./pages/allproducts/AllProducts";
 import AddProduct from "./pages/admin/pages/AddProduct";
 import UpdateProduct from "./pages/admin/pages/UpdateProduct";
 import { ToastContainer } from "react-toastify";
@@ -64,6 +65,7 @@ function App() {
               </ProtectedRoutesForAdmin>
             }
           />
+          <Route path="/allproducts" element={<AllProducts />} />
           <Route path="/*" element={<NoPage />} />
         </Routes>
         <ToastContainer />
