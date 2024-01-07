@@ -157,9 +157,31 @@ function MyState(props) {
     }
   };
 
+  // ************fetch users from firebase********************
+  const [user, setUser] = useState([]);
+
+  const getUserData = async () => {
+    setLoading(true);
+    try {
+      const result = await getDocs(collection(fireDB, "users"));
+      const usersArray = [];
+      result.forEach((doc) => {
+        usersArray.push(doc.data());
+        setLoading(false);
+      });
+      setUser(usersArray);
+      console.log(usersArray);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     getProductData();
     getOrderData();
+    getUserData();
   }, []);
 
   return (
@@ -177,6 +199,7 @@ function MyState(props) {
         updateProduct,
         order,
         deleteProduct,
+        user,
       }}
     >
       {props.children}

@@ -14,7 +14,7 @@ export default function Footer() {
         color: mode === "dark" ? "white" : "",
       }}
     >
-      <div className="container px-5 py-24 mx-auto">
+      <div className="container lg:px-20 px-5 py-24 mx-auto">
         <div className="flex flex-wrap md:text-left text-center order-first">
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2
