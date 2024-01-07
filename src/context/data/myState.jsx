@@ -178,6 +178,11 @@ function MyState(props) {
     }
   };
 
+  // ********homepage product filter logic******************
+  const [searchkey, setSearchkey] = useState("");
+  const [filterType, setFilterType] = useState("");
+  const [filterPrice, setFilterPrice] = useState("");
+
   useEffect(() => {
     getProductData();
     getOrderData();
@@ -200,6 +205,12 @@ function MyState(props) {
         order,
         deleteProduct,
         user,
+        searchkey,
+        setSearchkey,
+        filterType,
+        setFilterType,
+        filterPrice,
+        setFilterPrice,
       }}
     >
       {props.children}

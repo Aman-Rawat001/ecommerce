@@ -423,10 +423,10 @@ function DashboardTab() {
                         Name
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        User Id
+                        Email
                       </th>
                       <th scope="col" className="px-6 py-3">
-                        Email
+                        User Id
                       </th>
                     </tr>
                   </thead>
@@ -457,14 +457,13 @@ function DashboardTab() {
                             className="px-6 py-4 text-black "
                             style={{ color: mode === "dark" ? "white" : "" }}
                           >
-                            {item.uid}
+                            {item.email}
                           </td>
-
                           <td
                             className="px-6 py-4 text-black "
                             style={{ color: mode === "dark" ? "white" : "" }}
                           >
-                            {item.email}
+                            {item.uid}
                           </td>
                         </tr>
                       </tbody>
