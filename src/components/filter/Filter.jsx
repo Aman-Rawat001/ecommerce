@@ -14,7 +14,9 @@ function Filter() {
     product,
   } = context;
 
-  // console.log(product);
+  const priceSet = new Set();
+  const categorySet = new Set();
+
   return (
     <div>
       <div className="container mx-auto lg:px-20 px-4 mt-5 ">
@@ -71,7 +73,12 @@ function Filter() {
                 }}
               >
                 {product.map((item, index) => {
-                  return <option value={item.category}>{item.category}</option>;
+                  if (!categorySet.has(item.category)) {
+                    categorySet.add(item.category);
+                    return (
+                      <option value={item.category}>{item.category}</option>
+                    );
+                  }
                 })}
               </select>
               <select
@@ -84,7 +91,10 @@ function Filter() {
                 }}
               >
                 {product.map((item, index) => {
-                  return <option value={item.price}>{item.price}</option>;
+                  if (!priceSet.has(item.price)) {
+                    priceSet.add(item.price);
+                    return <option value={item.price}>{item.price}</option>;
+                  }
                 })}
               </select>
             </div>
