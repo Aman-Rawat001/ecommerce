@@ -22,7 +22,7 @@ export default function Navbar() {
   };
 
   return (
-    <div className="bg-white sticky top-0 z-50  ">
+    <div className="bg-white sticky top-0  z-50  ">
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -169,14 +169,14 @@ export default function Navbar() {
 
         <nav
           aria-label="Top"
-          className="bg-gray-100 px-4 sm:px-6 lg:px-8 shadow-xl "
+          className=" bg-gray-100 px-4 sm:px-6 lg:px-8 shadow-xl "
           style={{
             backgroundColor: mode === "dark" ? "#282c34" : "",
             color: mode === "dark" ? "white" : "",
           }}
         >
           <div className="">
-            <div className="flex h-16 items-center">
+            <div className=" flex h-16 items-center">
               <button
                 type="button"
                 className="rounded-md bg-white p-2 text-gray-400 lg:hidden"

@@ -1,5 +1,6 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
+import { toast } from "react-toastify";
 
 export default function Modal({
   name,
@@ -14,12 +15,19 @@ export default function Modal({
 }) {
   let [isOpen, setIsOpen] = useState(false);
 
+  // check if user is logged in or not before placing an order--------
+
   function closeModal() {
     setIsOpen(false);
   }
 
   function openModal() {
-    setIsOpen(true);
+    try {
+      const userEmail = JSON.parse(localStorage.getItem("user")).user.email;
+      setIsOpen(true);
+    } catch (error) {
+      toast.error("Please login before placing an order..");
+    }
   }
 
   // console.log(name,address,pincode,phoneNumber)

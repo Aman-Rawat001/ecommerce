@@ -102,7 +102,7 @@ export default function Footer() {
               className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3"
               style={{ color: mode === "dark" ? "white" : "" }}
             >
-              Services
+              SERVICES
             </h2>
             <nav className="list-none mb-10">
               <li>
