@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaUserTie } from "react-icons/fa";
 import myContext from "../../../context/data/myContext";
 import Layout from "../../../components/layout/Layout";
@@ -6,7 +6,17 @@ import DashboardTab from "./DashboardTab";
 
 function Dashboard() {
   const context = useContext(myContext);
-  const { mode } = context;
+  const { mode, product, order, user } = context;
+
+  const [totalProducts, setTotalProducts] = useState(0);
+  const [totalOrders, setTotalOrders] = useState(0);
+  const [totalUsers, setTotalUsers] = useState(0);
+
+  useEffect(() => {
+    setTotalProducts(product.length);
+    setTotalOrders(order.length);
+    setTotalUsers(user.length);
+  }, []);
   return (
     <Layout>
       <section className="text-gray-600 body-font mt-10 mb-10">
@@ -30,7 +40,7 @@ function Dashboard() {
                   className="title-font font-medium text-3xl text-black fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
-                  10
+                  {totalProducts}
                 </h2>
                 <p
                   className=" text-purple-500  font-bold"
@@ -58,7 +68,7 @@ function Dashboard() {
                   className="title-font font-medium text-3xl text-black fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
-                  10
+                  {totalOrders}
                 </h2>
                 <p
                   className=" text-purple-500  font-bold"
@@ -86,7 +96,7 @@ function Dashboard() {
                   className="title-font font-medium text-3xl text-black fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
-                  20
+                  {totalUsers}
                 </h2>
                 <p
                   className=" text-purple-500  font-bold"
@@ -114,13 +124,13 @@ function Dashboard() {
                   className="title-font font-medium text-3xl text-black fonts1"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
-                  20
+                  1290
                 </h2>
                 <p
                   className=" text-purple-500  font-bold"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
-                  Total Products
+                  Total Sessions
                 </p>
               </div>
             </div>

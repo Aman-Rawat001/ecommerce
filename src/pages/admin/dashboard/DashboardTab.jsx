@@ -31,7 +31,7 @@ function DashboardTab() {
         <div className="tab container mx-auto ">
           <Tabs defaultIndex={0} className=" ">
             <TabList className="md:flex md:space-x-8 bg-grid grid-cols-2 text-center gap-4   md:justify-center mb-10 ">
-              <Tab>
+              <Tab className="my-2">
                 <button
                   type="button"
                   className="font-medium border-b-2 hover:shadow-purple-700 border-purple-500 text-purple-500 rounded-lg text-xl shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]  px-5 py-1.5 text-center bg-[#605d5d12] "
@@ -42,7 +42,7 @@ function DashboardTab() {
                   </div>{" "}
                 </button>
               </Tab>
-              <Tab>
+              <Tab className="my-2">
                 <button
                   type="button"
                   className="font-medium border-b-2 border-pink-500 bg-[#605d5d12] text-pink-500  hover:shadow-pink-700  rounded-lg text-xl shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]    px-5 py-1.5 text-center "
@@ -52,7 +52,7 @@ function DashboardTab() {
                   </div>
                 </button>
               </Tab>
-              <Tab>
+              <Tab className="my-2">
                 <button
                   type="button"
                   className="font-medium border-b-2 border-green-500 bg-[#605d5d12] text-green-500 rounded-lg text-xl  hover:shadow-green-700 shadow-[inset_0_0_8px_rgba(0,0,0,0.6)]   px-5 py-1.5 text-center "
