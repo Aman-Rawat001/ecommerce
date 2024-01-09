@@ -111,7 +111,13 @@ export default function Navbar() {
                       </a>
                     </div>
                   ) : (
-                    ""
+                    <Link
+                      to="/login"
+                      className="text-sm font-medium text-gray-700 "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Login
+                    </Link>
                   )}
                   <div className="flow-root">
                     <Link
@@ -252,7 +258,13 @@ export default function Navbar() {
                       Logout
                     </a>
                   ) : (
-                    ""
+                    <Link
+                      to="/login"
+                      className="text-sm font-medium text-gray-700 "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Login
+                    </Link>
                   )}
                 </div>
 
