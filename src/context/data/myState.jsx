@@ -183,6 +183,12 @@ function MyState(props) {
   const [filterType, setFilterType] = useState("");
   const [filterPrice, setFilterPrice] = useState("");
 
+  const handleFilterReset = () => {
+    setSearchkey("");
+    setFilterPrice("");
+    setFilterType("");
+  };
+
   useEffect(() => {
     getProductData();
     getOrderData();
@@ -211,6 +217,7 @@ function MyState(props) {
         setFilterType,
         filterPrice,
         setFilterPrice,
+        handleFilterReset,
       }}
     >
       {props.children}

@@ -12,6 +12,7 @@ function Filter() {
     filterPrice,
     setFilterPrice,
     product,
+    handleFilterReset,
   } = context;
 
   const priceSet = new Set();
@@ -55,6 +56,7 @@ function Filter() {
           <div className="flex items-center justify-between mt-4">
             <p className="font-medium">Filters</p>
             <button
+              onClick={handleFilterReset}
               className="px-4 py-2 bg-gray-50hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-md"
               style={{ color: mode === "dark" ? "white" : "" }}
             >
