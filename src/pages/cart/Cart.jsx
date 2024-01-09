@@ -7,6 +7,7 @@ import { deleteFromCart } from "../../redux/cartSlice";
 import { toast } from "react-toastify";
 import { fireDB } from "../../firebase/firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const context = useContext(myContext);
@@ -120,10 +121,36 @@ function Cart() {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
+  if (cartItems.length === 0) {
+    return (
+      <Layout>
+        <div
+          className="bg-gray-100 py-10 "
+          style={{
+            backgroundColor: mode === "dark" ? "#282c34" : "",
+            color: mode === "dark" ? "white" : "",
+          }}
+        >
+          <h1 className="mb-10 text-center text-2xl font-bold">
+            Oops! Your Cart Is Empty
+          </h1>
+          <div className="flex justify-center mb-10 font-medium">
+            <Link to={`/allproducts`}>
+              <button className="bg-gray-300 px-5 py-2 rounded-xl">
+                Explore Products
+              </button>
+            </Link>
+          </div>
+        </div>
+      </Layout>
+    );
+  }
+  // console.log(cartItems);
+
   return (
     <Layout>
       <div
-        className="h-screen bg-gray-100 pt-5 mb-[60%]"
+        className="bg-gray-100 pt-5"
         style={{
           backgroundColor: mode === "dark" ? "#282c34" : "",
           color: mode === "dark" ? "white" : "",
