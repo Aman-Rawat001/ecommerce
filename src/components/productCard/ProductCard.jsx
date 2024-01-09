@@ -52,7 +52,7 @@ function ProductCard() {
             .filter((obj) => obj.price.toLowerCase().includes(filterPrice))
             .slice(0, 8) // show only 8 products in homapge
             .map((item, index) => {
-              const { title, price, description, imageUrl } = item;
+              const { title, price, description, imageUrl, category } = item;
               return (
                 <div
                   onClick={() =>
@@ -79,7 +79,7 @@ function ProductCard() {
                         className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        E-Bharat
+                        {category}
                       </h2>
                       <h1
                         className="title-font text-lg font-medium text-gray-900 mb-3"

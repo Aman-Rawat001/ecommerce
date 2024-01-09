@@ -56,7 +56,7 @@ const AllProducts = () => {
               .filter((obj) => obj.category.toLowerCase().includes(filterType))
               .filter((obj) => obj.price.toLowerCase().includes(filterPrice))
               .map((item, index) => {
-                const { title, price, description, imageUrl } = item;
+                const { title, price, description, imageUrl, category } = item;
                 return (
                   <div
                     onClick={() =>
@@ -83,7 +83,7 @@ const AllProducts = () => {
                           className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1"
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
-                          E-Bharat
+                          {category}
                         </h2>
                         <h1
                           className="title-font text-lg font-medium text-gray-900 mb-3"
