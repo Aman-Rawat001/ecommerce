@@ -178,6 +178,8 @@ function MyState(props) {
     }
   };
 
+  // **********announcement bar*****************************
+
   // ********homepage product filter logic******************
   const [searchkey, setSearchkey] = useState("");
   const [filterType, setFilterType] = useState("");

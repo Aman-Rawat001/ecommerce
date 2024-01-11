@@ -15,12 +15,11 @@ export default function Modal({
 }) {
   let [isOpen, setIsOpen] = useState(false);
 
-  // check if user is logged in or not before placing an order--------
-
   function closeModal() {
     setIsOpen(false);
   }
 
+  // check if user is logged in or not before placing an order--------
   function openModal() {
     try {
       const userEmail = JSON.parse(localStorage.getItem("user")).user.email;
