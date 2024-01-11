@@ -14,7 +14,7 @@ export default function Navbar() {
   const cartItems = useSelector((state) => state.cart);
 
   const context = useContext(myContext);
-  const { toggleMode, mode } = context;
+  const { toggleMode, mode, announcementMessage } = context;
 
   const logout = () => {
     localStorage.clear("user");
@@ -30,7 +30,7 @@ export default function Navbar() {
           color: mode === "dark" ? "white" : "",
         }}
       >
-        Get free delivery on orders over ₹300
+        {announcementMessage}
       </p>
       <div className="bg-white sticky top-0  z-50  ">
         {/* Mobile menu */}

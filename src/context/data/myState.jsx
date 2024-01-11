@@ -12,6 +12,7 @@ import {
   deleteDoc,
   doc,
   getDocs,
+  getDoc,
 } from "firebase/firestore";
 import { toast } from "react-toastify";
 
@@ -179,6 +180,18 @@ function MyState(props) {
   };
 
   // **********announcement bar*****************************
+  const [announcementMessage, setAnnouncementMessage] = useState("");
+  const getAnnouncement = async () => {
+    try {
+      const docRef = await doc(fireDB, "announcement", "S1ILdcECeptFv19zlxIp");
+      const docSnap = await getDoc(docRef);
+      const msg = docSnap.data();
+      // console.log(msg.message);
+      setAnnouncementMessage(docSnap.data().message);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // ********homepage product filter logic******************
   const [searchkey, setSearchkey] = useState("");
@@ -195,6 +208,7 @@ function MyState(props) {
     getProductData();
     getOrderData();
     getUserData();
+    getAnnouncement();
   }, []);
 
   return (
@@ -220,6 +234,7 @@ function MyState(props) {
         filterPrice,
         setFilterPrice,
         handleFilterReset,
+        announcementMessage,
       }}
     >
       {props.children}
