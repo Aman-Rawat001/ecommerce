@@ -6,12 +6,14 @@ import ProductCard from "../../components/productCard/ProductCard";
 import Testimonial from "../../components/testimonial/Testinonial";
 import Track from "../../components/track/Track";
 import { Link } from "react-router-dom";
+import ShopByCatrgory from "./ShopByCategory/ShopByCatrgory";
 
 const Home = () => {
   return (
     <>
       <Layout>
         <HeroSection />
+        <ShopByCatrgory />
         <Filter />
         <ProductCard />
         {/* *******see more button******** */}

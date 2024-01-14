@@ -20,6 +20,7 @@ import AddProduct from "./pages/admin/pages/AddProduct";
 import UpdateProduct from "./pages/admin/pages/UpdateProduct";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import CategoryPage from "./pages/categoryPage/CategoryPage";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/category/:id" element={<CategoryPage />} />
           {/* Dynamic routing - tracking using id */}
           <Route path="/productinfo/:id" element={<ProductInfo />} />
           <Route path="/cart" element={<Cart />} />
