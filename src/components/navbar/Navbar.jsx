@@ -87,8 +87,8 @@ export default function Navbar() {
                     >
                       All Products
                     </Link>
-                    <div className="flow-root">
-                      {user ? (
+                    {user ? (
+                      <div className="flow-root">
                         <Link
                           to={"/order"}
                           style={{ color: mode === "dark" ? "white" : "" }}
@@ -96,10 +96,10 @@ export default function Navbar() {
                         >
                           Order
                         </Link>
-                      ) : (
-                        ""
-                      )}
-                    </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
 
                     <div className="flow-root">
                       {user?.user?.email === "amanrawa2@gmail.com" ? (
