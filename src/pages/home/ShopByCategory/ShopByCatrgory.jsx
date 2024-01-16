@@ -66,7 +66,7 @@ const ShopByCatrgory = () => {
                   <div className="shadow-lg flex items-center justify-center flex-col gap-4 py-5 hover:shadow-md border-2 rounded-lg cursor-pointer">
                     <img
                       className="w-48 hover:scale-110"
-                      src="https://cdn.pixabay.com/photo/2016/12/26/06/16/i-phone-1931557_1280.jpg"
+                      src="https://i.ibb.co/fSxpRyV/i-phone-1931557-1280-prev-ui.png"
                     />
                     <div>
                       <h1
@@ -86,7 +86,7 @@ const ShopByCatrgory = () => {
                   <div className="shadow-lg flex items-center justify-center flex-col gap-4 py-5 hover:shadow-md border-2 rounded-lg cursor-pointer">
                     <img
                       className="w-48 hover:scale-110"
-                      src="https://m.media-amazon.com/images/I/71BrtUGEvvL._SX679_.jpg"
+                      src="https://i.ibb.co/hRrYhf1/71-Brt-UGEvv-L-SX679-prev-ui.png"
                     />
                     <div>
                       <h1
@@ -106,7 +106,7 @@ const ShopByCatrgory = () => {
                   <div className="shadow-lg flex items-center justify-center flex-col gap-4 py-5 hover:shadow-md border-2 rounded-lg cursor-pointer">
                     <img
                       className="w-48 hover:scale-110"
-                      src="https://m.media-amazon.com/images/I/41YhYmWwsNL._SX300_SY300_QL70_FMwebp_.jpg"
+                      src="https://i.ibb.co/BrpNWRx/41-Yh-Ym-Wws-NL-SX300-SY300-QL70-FMwebp-prev-ui.png"
                     />
                     <div>
                       <h1
@@ -126,7 +126,7 @@ const ShopByCatrgory = () => {
                   <div className="shadow-lg flex items-center justify-center flex-col gap-4 py-5 hover:shadow-md border-2 rounded-lg cursor-pointer">
                     <img
                       className="w-48 hover:scale-110"
-                      src="https://m.media-amazon.com/images/I/61JtVmcxb0L._SX679_.jpg"
+                      src="https://i.ibb.co/3F0yNHY/61-Jt-Vmcxb0-L-SX679-prev-ui.png"
                     />
                     <div>
                       <h1
@@ -146,7 +146,7 @@ const ShopByCatrgory = () => {
                   <div className="shadow-lg flex items-center justify-center flex-col gap-4 py-5 hover:shadow-md border-2 rounded-lg cursor-pointer">
                     <img
                       className="w-48 hover:scale-110"
-                      src="https://m.media-amazon.com/images/I/41cTomA4G1L._SX300_SY300_QL70_FMwebp_.jpg"
+                      src="https://i.ibb.co/3rxpYSB/41c-Tom-A4-G1-L-SX300-SY300-QL70-FMwebp-prev-ui.png"
                     />
                     <div>
                       <h1
